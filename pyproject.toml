@@ -1,0 +1,27 @@
+[project]
+name = "auto-opt-tabular-service"
+version = "0.0.1"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ncliffel", email = "85183849+ncliffel@users.noreply.github.com" }
+]
+requires-python = ">=3.10,<=3.14.1"
+dependencies = [
+    "fastapi>=0.141.1",
+    "pydantic>=2.13.4",
+    "uvicorn[standard]>=0.52.1",
+]
+
+[project.scripts]
+auto-opt-tabular-service = "auto_opt_tabular_service:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.2",
+]
