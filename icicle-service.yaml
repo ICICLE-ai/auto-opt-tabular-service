@@ -3,9 +3,9 @@ schema-version: 1
 # Identity
 service-name: auto-opt-tabular-service
 service-version: 0.0.1
-project-name: autoopttabularservice
+project-name: auto-opt-tabular
 service-type: ai
-pod-name: 
+pod-name: autoopttabularservice
 
 # Runtime
 runtime-type: python
