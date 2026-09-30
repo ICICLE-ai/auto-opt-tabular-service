@@ -3,7 +3,7 @@ schema-version: 1
 # Identity
 service-name: auto-opt-tabular-service
 service-version: 0.0.1
-project-name: auto-opt-tabular
+project-name: autoopttabularservice
 service-type: ai
 pod-name: 
 
