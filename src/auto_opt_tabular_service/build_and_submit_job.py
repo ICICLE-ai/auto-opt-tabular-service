@@ -25,7 +25,7 @@ class Job(BaseModel):
 	params_path: str
 	bags: int = 3
 	eval_iterations: int = 3
-	
+
 
 
 @router.post("/run_job")
@@ -92,7 +92,7 @@ async def run_job(job:Job, x_token:str=Header(...)):
 				{"arg": f"--bags={job.bags}"},
 				{"arg": f"--eval_type={job.eval_type}"},
 				{"arg": f"--gen_strat={job.gen_strat}"},
-				{"arg": f"--metric={job.metric}"},
+				{"arg": f"--metric={job.metric.strip().replace(" ", "")}"},
 				{"arg": f"--err_path={job.err_path}"},
 				{"arg": f"--params_path={job.params_path}"}
 			]
@@ -106,7 +106,7 @@ async def run_job(job:Job, x_token:str=Header(...)):
 		]
 	}
 	# creating tapis object
-	t = Tapis(base_url="https://tacc.tapis.io", jwt=x_token)
+	t = Tapis(base_url="https://icicleai.tapis.io", jwt=x_token)
 	# submitting job
 	res = t.jobs.submitJob(**job_dict)
 	# retunring tapis job unique identifier
